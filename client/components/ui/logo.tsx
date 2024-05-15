@@ -1,25 +1,21 @@
+import { Icons } from "@/components/ui/icons";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { FC } from "react";
-import { Icons } from "./icons";
 
-interface LogoProps {
-  className?: string;
-  href?: string;
-}
+interface LogoProps {}
 
-const Logo: FC<LogoProps> = ({ className, href }) => {
-  return href ? (
-    <Link href={href}>
-      <Icons.logo
-        className={cn(
-          "w-8 h-8 md:w-12 md:h-12 active:scale-95 duration-75 transition-transform ease-in-out",
-          className
-        )}
-      />
+const Logo: FC<LogoProps> = ({}) => {
+  return (
+    <Link
+      href="/s"
+      className={cn(
+        "hidden md:flex !mb-10 !p-0 items-center justify-center active:scale-95 transition-all ease-in-out duration-75"
+      )}
+    >
+      <Icons.logo className="w-6 h-6 shrink-0 lg:hidden" />
+      <Icons.logo className="w-6 h-6 hidden lg:block" />
     </Link>
-  ) : (
-    <Icons.logo className={cn("w-8 h-8 md:w-12 md:h-12", className)} />
   );
 };
 

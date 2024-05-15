@@ -1,3 +1,4 @@
+import SideBar from "@/components/subscriber/side-bar";
 import { ThemeProvider } from "@/components/theme-provider";
 import "@/styles/globals.css";
 import { GeistMono } from "geist/font/mono";
@@ -20,7 +21,7 @@ export default function SubscriberLayout({
   return (
     <html lang="en">
       <body
-        className={`${GeistSans.variable} ${GeistMono.variable} relative flex h-screen w-screen flex-col bg-background md:items-center md:justify-center md:bg-transparent overflow-hidden antialiased font-sans`}
+        className={`${GeistSans.variable} ${GeistMono.variable} antialiased font-sans flex h-screen relative flex-col md:flex-row md:overflow-hidden`}
       >
         <ThemeProvider
           attribute="class"
@@ -28,8 +29,12 @@ export default function SubscriberLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <p>Subscriber Navigation</p>
-          {children}
+          <div className="w-20 flex-none lg:w-64 md:border-r">
+            <SideBar />
+          </div>
+          <div className="mt-12 md:mt-0 flex-1 w-full md:overflow-y-auto sm:p-6 md:p-12 max-w-7xl mx-auto">
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>
