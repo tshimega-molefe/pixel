@@ -3,8 +3,8 @@ import React from "react";
 const HomePage = () => {
   return (
     <div>
-      <h1>Home - Recommended Content</h1>
-      {/* TODO: Add logic to display recommended content */}
+      <h1>Home Page</h1>
+      {/* TODO: Add logic to display Home Content */}
     </div>
   );
 };

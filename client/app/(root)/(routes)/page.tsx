@@ -1,4 +1,3 @@
-import { ThemeToggle } from "@/components/theme-toggle";
 import Logo from "@/components/ui/logo";
 
 export default function Home() {

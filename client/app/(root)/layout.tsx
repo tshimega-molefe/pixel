@@ -8,10 +8,10 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: {
-    default: "Pixel",
-    template: `%s - Create.`,
+    default: "About",
+    template: `%s - Pixel`,
   },
-  description: "Create.",
+  description: "Pixel",
 };
 
 export default function RootLayout({
