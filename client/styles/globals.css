@@ -2,6 +2,36 @@
   @tailwind components;
   @tailwind utilities;
 
+  * {
+  scroll-behavior: smooth
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+  scrollbar-gutter: auto;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #00000000        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #000000;    /* color of the scroll thumb */
+  border-radius: 4px;       /* roundness of the scroll thumb */
+  border: 2px solid #000000;  /* creates padding around scroll thumb */
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #00000067 #00000000;
+}
+
   @layer base {
     :root {
       --background: 0 0% 100%;
