@@ -13,8 +13,8 @@ const Logo: FC<LogoProps> = ({}) => {
         "hidden md:flex !mb-10 !p-0 items-center justify-center active:scale-95 transition-all ease-in-out duration-75"
       )}
     >
-      <Icons.logo className="w-6 h-6 shrink-0 lg:hidden" />
-      <Icons.logo className="w-6 h-6 hidden lg:block" />
+      <Icons.icon className="w-6 h-6 shrink-0 lg:hidden" />
+      <Icons.logo className="h-fit w-28 hidden lg:block" />
     </Link>
   );
 };

@@ -13,14 +13,14 @@ export const links = [
     name: "Home",
     href: "/s",
     icon: (weight: IconWeight | undefined) => (
-      <House className="w-6 h-6 shrink-0" weight={weight} />
+      <House className="w-5 h-5 shrink-0" weight={weight} />
     ),
   },
   {
     name: "Search",
     href: "/s/search",
     icon: (weight: IconWeight | undefined) => (
-      <MagnifyingGlass className="w-6 h-6 shrink-0" weight={weight} />
+      <MagnifyingGlass className="w-5 h-5 shrink-0" weight={weight} />
     ),
     hideOnMobile: true,
   },
@@ -28,30 +28,23 @@ export const links = [
     name: "Trending",
     href: "/s/trending",
     icon: (weight: IconWeight | undefined) => (
-      <Fire className="w-6 h-6 shrink-0" weight={weight} />
+      <Fire className="w-5 h-5 shrink-0" weight={weight} />
     ),
   },
   {
     name: "Messages",
-    href: "/s/mypixel/messages",
+    href: "/s/studio/messages",
     icon: (weight: IconWeight | undefined) => (
-      <ChatsCircle className="w-6 h-6 shrink-0" weight={weight} />
+      <ChatsCircle className="w-5 h-5 shrink-0" weight={weight} />
     ),
     hideOnMobile: true,
   },
   {
     name: "Notifications",
-    href: "/s/mypixel/notifications",
+    href: "/s/studio/notifications",
     icon: (weight: IconWeight | undefined) => (
-      <BellSimple className="w-6 h-6 shrink-0" weight={weight} />
+      <BellSimple className="w-5 h-5 shrink-0" weight={weight} />
     ),
     hideOnMobile: true,
   },
-  // {
-  //   name: "My Pixel",
-  //   href: "/s/mypixel",
-  //   icon: (weight: IconWeight | undefined) => (
-  //     <DotsNine className="w-6 h-6 shrink-0" weight={weight} />
-  //   ),
-  // },
 ];
