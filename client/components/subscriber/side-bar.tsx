@@ -1,7 +1,8 @@
 "use client";
+import NavigationLinks from "@/components/subscriber/navigation-links";
 import Logo from "@/components/ui/logo";
 import { FC } from "react";
-import NavigationLinks from "@/components/subscriber/navigation-links";
+import SidebarDropdownMenu from "./side-bar-dropdown-menu";
 
 interface SideBarProps {}
 
@@ -13,8 +14,9 @@ const SideBar: FC<SideBarProps> = ({}) => {
         <NavigationLinks />
 
         {/* user && <UserButton/> */}
+        <p>user</p>
         <div className="hidden md:flex relative md:mt-auto flex-1 items-end w-full">
-          {/* More DropdownMenu */}More
+          <SidebarDropdownMenu />
         </div>
       </div>
     </div>

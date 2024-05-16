@@ -47,11 +47,11 @@ export const links = [
     ),
     hideOnMobile: true,
   },
-  {
-    name: "My Pixel",
-    href: "/s/mypixel",
-    icon: (weight: IconWeight | undefined) => (
-      <DotsNine className="w-6 h-6 shrink-0" weight={weight} />
-    ),
-  },
+  // {
+  //   name: "My Pixel",
+  //   href: "/s/mypixel",
+  //   icon: (weight: IconWeight | undefined) => (
+  //     <DotsNine className="w-6 h-6 shrink-0" weight={weight} />
+  //   ),
+  // },
 ];
