@@ -53,7 +53,7 @@ export const Icons = {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <g clip-path="url(#clip0_80_2)">
+      <g clipPath="url(#clip0_80_2)">
         <mask
           id="mask0_80_2"
           maskUnits="userSpaceOnUse"
