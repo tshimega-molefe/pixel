@@ -1,0 +1,28 @@
+# Node modules
+node_modules
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+
+# Local configuration files
+env
+.env
+.env.local
+.env.*.local
+
+# Git files
+.git
+.gitignore
+
+# Docker files
+.dockerignore
+Dockerfile*
+
+# Other unnecessary files
+.vscode
+.idea
+.DS_Store
