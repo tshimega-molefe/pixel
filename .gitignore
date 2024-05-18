@@ -1,0 +1,93 @@
+# Virtual environments
+.conda/
+.env/
+.envs/
+.condarc
+.conda_lock
+.conda-meta/
+envs/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+.env.local
+.env.*.local
+
+# Data directory
+data/
+
+# Static files
+**/static/
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+bun-error.log*
+
+# Node modules
+node_modules/
+
+# Dependency directories
+.pnp
+.pnp.js
+.yarn/install-state.gz
+.bun
+
+# Next.js build output
+.next/
+out/
+
+# Production build output
+build/
+
+# Coverage directories
+coverage/
+
+# Miscellaneous system files
+.DS_Store
+Thumbs.db
+*.pem
+
+# Editor directories and files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Pytest cache
+.pytest_cache/
+
+# Django specific files
+db.sqlite3
+*.pyc
+__pycache__/
+*.pyo
+local_settings.py
+
+# Static and media directories for Django
+/static/
+media/
+
+# Docker files
+docker-compose.override.yml
+# .dockerignore
+
+# Other temporary files and directories
+*.tmp
+*.swp
+*~
+.project
+
+# Vercel directory
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Bun
+bun.lockb
