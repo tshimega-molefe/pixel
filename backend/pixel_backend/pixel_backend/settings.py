@@ -1,6 +1,7 @@
 import os
 
 from pathlib import Path
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -13,7 +14,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(os.environ.get("DEBUG", default=0))
+# DEBUG = bool(os.environ.get("DEBUG", default=0)
+DEBUG = bool(int(os.environ.get("DEBUG", 0)))
 
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 
@@ -27,9 +29,35 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # Third Party
+    "rest_framework",
+    "rest_framework.authtoken",
+    "corsheaders",
+    "django.contrib.sites",
+    # Authentication
+    "dj_rest_auth",
+    "dj_rest_auth.registration",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.google",
+    # Local
+    "pixel_auth",
 ]
 
+SOCIALACCOUNT_PROVIDERS = {
+    "google": {"SCOPE": ["profile", "email"], "AUTH_PARAMS": {"access_type": "online"}}
+}
+
+# Temporary disablement of email verification
+SOCIALACCOUNT_EMAIL_VERIFICATION = "none"
+SOCIALACCOUNT_EMAIL_REQUIRED = False
+
+SITE_ID = 1
+REST_USE_JWT = True  # Use JSON Web Tokens
+
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",  # for CORS
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -37,7 +65,40 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "allauth.account.middleware.AccountMiddleware",
 ]
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
+    "ROTATE_REFRESH_TOKENS": True,
+    "BLACKLIST_AFTER_ROTATION": True,
+    "UPDATE_LAST_LOGIN": True,
+    "USER_ID_FIELD": "userId",
+    "USER_ID_CLAIM": "user_id",
+    "SIGNING_KEY": os.environ.get("JWT_SECRET_KEY"),
+}
+
+# Only for development environments! Revert to false before pushing to production!
+CORS_ORIGIN_ALLOW_ALL = True
+
+# Custom user model, because we do not want to use the Django provided user model
+AUTH_USER_MODEL = "pixel_auth.CustomUserModel"
+
+# Specifying the serializer for authentication
+REST_AUTH_SERIALIZERS = {
+    "USER_DETAILS_SERIALIZER": "pixel_auth.serializers.CustomUserModelSerializer"
+}
+
+# Setting up the authentication classes
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework.authentication.BasicAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+        "dj_rest_auth.utils.JWTCookieAuthentication",
+    ),
+}
 
 ROOT_URLCONF = "pixel_backend.urls"
 
