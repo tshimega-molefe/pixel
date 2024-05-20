@@ -82,6 +82,8 @@ SIMPLE_JWT = {
 # Only for development environments! Revert to false before pushing to production!
 CORS_ORIGIN_ALLOW_ALL = True
 
+CORS_ALLOWED_ORIGINS = ["http://127.0.0.1:8000", "http://127.0.0.1:3000"]
+
 # Custom user model, because we do not want to use the Django provided user model
 AUTH_USER_MODEL = "pixel_auth.CustomUserModel"
 

@@ -10,7 +10,7 @@ services:
       - 8000:8000
     restart: always
     env_file:
-      - ./.env.dev
+      - ./.env.local
     depends_on:
       - db
   db:

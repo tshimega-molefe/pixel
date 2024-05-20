@@ -1,4 +1,3 @@
-# pixel_auth/views.py
 from django.shortcuts import render
 
 # Create your views here.
@@ -9,9 +8,9 @@ from django.conf import settings
 
 
 class GoogleLoginView(SocialLoginView):
-    # authentication_classes = (
-    #     []
-    # )  # Disable authentication, make sure to override 'allowed origins' in settings.py in production
+    authentication_classes = (
+        []
+    )  # Disable authentication, make sure to override 'allowed origins' in settings.py in production
     adapter_class = GoogleOAuth2Adapter
     callback_url = "http://127.0.0.1:3000"
     client_class = OAuth2Client
