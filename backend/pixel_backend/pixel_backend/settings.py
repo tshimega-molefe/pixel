@@ -96,8 +96,14 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework.authentication.BasicAuthentication",
         "rest_framework.authentication.SessionAuthentication",
-        "dj_rest_auth.utils.JWTCookieAuthentication",
+        "dj_rest_auth.jwt_auth.JWTCookieAuthentication",
     ),
+}
+
+REST_AUTH = {
+    "USE_JWT": True,
+    "JWT_AUTH_COOKIE": "pixel-auth",
+    "JWT_AUTH_REFRESH_COOKIE": os.environ.get("JWT_SECRET_KEY"),
 }
 
 ROOT_URLCONF = "pixel_backend.urls"
